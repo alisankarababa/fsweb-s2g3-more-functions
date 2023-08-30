@@ -55,9 +55,30 @@ function dosyaAdiniBul(filePath) {
   örnek output: 104
 */
 
-function ortalamaBul(/* kodlar buraya */) {
-  // kodlar buraya
+/*
+  -bos array gelir ise null dondur
+  -arraydeki tum sayilari topla
+  -toplam sayiyi array uzunluguna bol ve olusan degeri geri dondur
+*/
+
+function ortalamaBul(arrNumbers) {
+  if (!arrNumbers.length) {
+    return null;
+  }
+
+  let sum = 0;
+  for (const iterator of arrNumbers) {
+    sum += iterator;
+  }
+
+  return sum / arrNumbers.length;
 }
+
+// console.log("G2:");
+// console.log(ortalamaBul([]));
+// console.log(ortalamaBul([4]));
+// console.log(ortalamaBul([50, -26, 153, 7]));
+// console.log(ortalamaBul([109, 216, 288, 143, 71, 185, -278, 194, 5]));
 
 /*
   GÖREV 3
