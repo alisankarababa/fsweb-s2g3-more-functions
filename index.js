@@ -100,9 +100,33 @@ function ortalamaBul(arrNumbers) {
   örnek output: [109, 216, 288, 143, 185, 194]
 */
 
-function ortalamadanBuyukleriBul(/* kodlar buraya */) {
-  // kodlar buraya
+/*
+  -array bos ise null dondur
+  -ortalamayi bul
+  -array.prototype.filter ile olusan yeni arrayi donder, (filter'a verilen fonksiyonda bulunan ortalamadan buyuk esittir mi ifadesini geri dondur )
+*/
+function ortalamadanBuyukleriBul(arrNumbers, meanValFinderFunc) {
+  if (!arrNumbers.length) {
+    return null;
+  }
+
+  const mean = meanValFinderFunc(arrNumbers);
+
+  return arrNumbers.filter((item) => {
+    return item >= mean;
+  });
 }
+
+// console.log("G3:");
+// console.log(ortalamadanBuyukleriBul([], ortalamaBul));
+// console.log(ortalamadanBuyukleriBul([4], ortalamaBul));
+// console.log(ortalamadanBuyukleriBul([50, -26, 153, 7], ortalamaBul));
+// console.log(
+//   ortalamadanBuyukleriBul(
+//     [109, 216, 288, 143, 71, 185, -278, 194, 5],
+//     ortalamaBul
+//   )
+// );
 
 /* !!!! Burdan aşağısını değiştirmeyin !!!! */
 function as() {
