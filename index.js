@@ -16,9 +16,26 @@
   örnek output: ""
 */
 
-function dosyaAdiniBul(/* kodlar buraya */) {
-  // kodlar buraya
+/*
+ -son / karakterinin indexini bul, bu indexe idx diyelim
+ -dosya adinin ilk karakterinin indexi idx + 1'dir, son karakterinin indexi de dosya uzantisi olarak
+    gonderilen stringin son indexidir, yani dosyaAdi.length ya da direk -1
+ -string.prototype.slice ile dosya adini elde et
+ */
+
+function dosyaAdiniBul(filePath) {
+  const idxFileNameStart = filePath.lastIndexOf("/");
+  if (-1 === idxFileNameStart) {
+    return filePath;
+  }
+
+  return filePath.slice(idxFileNameStart + 1, filePath.length);
 }
+
+// console.log("G1:");
+// console.log(dosyaAdiniBul("C:/Users/johnsmith/Music/Beethoven_5.mp3"));
+// console.log(dosyaAdiniBul("Beethoven_5.mp3"));
+// console.log(dosyaAdiniBul(""));
 
 /*
   GÖREV 2
